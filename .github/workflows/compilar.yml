@@ -5,8 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Atualizado para v4
-      - uses: actions/setup-python@v5 # Atualizado para v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       
@@ -14,5 +14,10 @@ jobs:
         run: pip install -U platformio
 
       - name: Compilar
-        # Este comando tenta compilar o primeiro ambiente encontrado no platformio.ini
         run: pio run
+
+      - name: Upload do Firmware
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-ender3-v3-se
+          path: .pio/build/**/firmware*.bin
