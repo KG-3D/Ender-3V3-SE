@@ -1,0 +1,15 @@
+name: Compilar Firmware Marlin
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Instalar PlatformIO
+        run: pip install -U platformio
+      - name: Compilar
+        run: pio run -e GD32F303RET6_creality
