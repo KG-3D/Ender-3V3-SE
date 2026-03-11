@@ -5,11 +5,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4  # Atualizado para v4
+      - uses: actions/setup-python@v5 # Atualizado para v5
         with:
-          python-version: '3.9'
+          python-version: '3.11'
+      
       - name: Instalar PlatformIO
         run: pip install -U platformio
+
       - name: Compilar
-        run: pio run -e GD32F303RET6_creality
+        # Este comando tenta compilar o primeiro ambiente encontrado no platformio.ini
+        run: pio run
