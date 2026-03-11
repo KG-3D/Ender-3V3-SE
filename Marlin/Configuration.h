@@ -143,7 +143,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Ender-3 V3 SE"
+#define CUSTOM_MACHINE_NAME "Creality Ender3V3SE"
 
 
 // Wi-Fi
