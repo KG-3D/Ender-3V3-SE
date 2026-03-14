@@ -1209,7 +1209,7 @@
  * A total of 3 or more adds more slow probes, taking the average.
  */
 #define MULTIPLE_PROBING   3
-#define EXTRA_PROBING    0
+#define EXTRA_PROBING    1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
