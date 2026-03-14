@@ -1757,13 +1757,13 @@
  *    +-------------->X     +-------------->X     +-------------->Y
  *     XY_SKEW_FACTOR        XZ_SKEW_FACTOR        YZ_SKEW_FACTOR
  */
-//#define SKEW_CORRECTION
+#define SKEW_CORRECTION
 
 #if ENABLED(SKEW_CORRECTION)
   // Input all length measurements here:
-  #define XY_DIAG_AC 282.84
-  #define XY_DIAG_BD 282.84
-  #define XY_SIDE_AD 200.69
+  #define XY_DIAG_AC 142.02
+  #define XY_DIAG_BD 141.66
+  #define XY_SIDE_AD 100.34
 
   // extern float xyskew_d_ac;
   // extern float xyskew_d_bd;
