@@ -340,11 +340,7 @@ void menu_motion() {
   #endif
 
   //
-  // Assisted Bed Tramming
-  //
-  #if ENABLED(ASSISTED_TRAMMING_WIZARD)
-    SUBMENU(MSG_TRAMMING_WIZARD, goto_tramming_wizard);
-  #endif
+  // Assisted Bed Tramming MOVED TO (menu_bed_leveling.cpp)
 
   //
   // Level Bed
