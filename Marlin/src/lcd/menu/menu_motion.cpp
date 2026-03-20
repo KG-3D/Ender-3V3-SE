@@ -296,6 +296,9 @@ void menu_move() {
 #elif ENABLED(LCD_BED_LEVELING)
   void menu_bed_leveling();
 #endif
+#if ENABLED(ASSISTED_TRAMMING_WIZARD)
+  void goto_tramming_wizard();
+#endif
 
 
 void menu_motion() {
