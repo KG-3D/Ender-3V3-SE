@@ -243,14 +243,7 @@ void menu_bed_leveling() {
   START_MENU();
   BACK_ITEM(MSG_MOTION);
 
-  // Assisted Tramming
-  #if ENABLED(ASSISTED_TRAMMING_WIZARD)
-  extern void goto_tramming_wizard();
-  SUBMENU(MSG_TRAMMING_WIZARD, goto_tramming_wizard);
-#endif
-
-
-  // Auto Home if not using manual probing
+   // Auto Home if not using manual probing
   #if NONE(PROBE_MANUALLY, MESH_BED_LEVELING)
     if (!is_homed) GCODES_ITEM(MSG_AUTO_HOME, G28_STR);
   #endif
