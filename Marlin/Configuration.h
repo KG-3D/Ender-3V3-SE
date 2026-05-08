@@ -1358,10 +1358,10 @@
     #define X_MIN_POS -11    //平台向左移动 
     #define  Y_MIN_POS   -18 //平台向前移动 rock_20220927
   #endif
-#else   //
+
 #define X_MIN_POS -4
 #define Y_MIN_POS -17
-#endif
+
 #define Z_MIN_POS 0
 // #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
   #define X_MAX_POS X_BED_SIZE
