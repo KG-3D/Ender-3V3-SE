@@ -1151,7 +1151,7 @@
 #if ENABLED(K8_EXTRUDER)  //K8挤出机传功比
   #define NOZZLE_TO_PROBE_OFFSET { -31.88, -16.5, 0 }  //prime 2023.03,13 陈工提供
 #else  //精灵挤出机传功比
-  #define NOZZLE_TO_PROBE_OFFSET { -24.25, -15, 0 }  //prime 2023.05.28 朱工提供
+  #define NOZZLE_TO_PROBE_OFFSET { -23.3, -17.6, 0 }  //KG3D mod.
 #endif
    
 #else 
@@ -1227,11 +1227,11 @@
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
 #define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES  2 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     2 // Z Clearance between multiple probes
+#define Z_CLEARANCE_BETWEEN_PROBES  4 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     4 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
-#define Z_PROBE_LOW_POINT          -4 // Farthest distance below the trigger-point to go before stopping
+#define Z_PROBE_LOW_POINT          -1 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
 #define Z_PROBE_OFFSET_RANGE_MIN -10
@@ -1343,18 +1343,18 @@
 
 // The size of the printable area
 #define X_BED_SIZE 220
-#define Y_BED_SIZE 220
+#define Y_BED_SIZE 200
 
 #define XY_BED_MIN_ZERO 0
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#if ENABLED(PLATFORM_OFFSET)  //需要平台偏移
-  // #define X_MIN_POS -10//-4        // +向左偏移 -向右偏移
-  // #define Y_MIN_POS -22       //平台向前移动 rock_20220927  - 向前，+向后 2.5
+#if ENABLED(PLATFORM_OFFSET)  // KG3D mod.
+   #define X_MIN_POS -11        // KG3D mod.
+   #define Y_MIN_POS -27       // KG3D mod.
   
-  #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
+  // #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
     #define X_MIN_POS    -13    //平台向左移动
     #define  Y_MIN_POS   -15
-  #else 
+  // #else 
     #define X_MIN_POS -11    //平台向左移动 
     #define  Y_MIN_POS   -18 //平台向前移动 rock_20220927
   #endif
@@ -1363,13 +1363,14 @@
 #define Y_MIN_POS -17
 #endif
 #define Z_MIN_POS 0
-#if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
+// #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
   #define X_MAX_POS X_BED_SIZE
-#else
+//#else
   #define X_MAX_POS X_BED_SIZE + 5
-#endif
-#define Y_MAX_POS Y_BED_SIZE + 7
-#define Z_MAX_POS 250  //由于切片软件没有限制250mm的高度，因此临时加高5mm  Rock——20230105  
+//#endif
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE
+#define Z_MAX_POS 250
 
 /**
  * Software Endstops
@@ -1566,7 +1567,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  #define G26_MESH_VALIDATION
+  //#define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for G26.
@@ -1582,11 +1583,11 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 6
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
-  //#define PROBE_Y_FIRST
+  #define PROBE_Y_FIRST
 
   #if ENABLED(AUTO_BED_LEVELING_BILINEAR)
 
@@ -1601,7 +1602,7 @@
     #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
-      #define BILINEAR_SUBDIVISIONS 4
+      #define BILINEAR_SUBDIVISIONS 3
     #endif
 
   #endif
