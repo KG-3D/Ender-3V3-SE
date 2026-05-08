@@ -1027,6 +1027,11 @@ float Probe::run_z_probe(const bool sanity_check/*=true*/) {
     )
   #endif
     {
+      // KG3D mod. alimentação do Watchdog durante ABL (G29)
+      #if ENABLED(USE_WATCHDOG)
+        HAL_watchdog_refresh();
+      #endif
+      
       // If the probe won't tare, return
       if (TERN0(PROBE_TARE, tare())) return true;
 
