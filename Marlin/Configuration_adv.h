@@ -884,7 +884,7 @@
 #if ENABLED(ASSISTED_TRAMMING)
 
   // Define positions for probe points.
-  #define TRAMMING_POINT_XY { {  25, 28 }, { 195,  28 }, { 195, 198 }, { 25, 198 } }
+  #define TRAMMING_POINT_XY { {  22, 6 }, { 192,  6 }, { 192, 175 }, { 22, 175 } }
 
   // Define position names for probe points.
   #define TRAMMING_POINT_NAME_1 "Front-Left"
@@ -1975,13 +1975,6 @@
   #define PROBING_MARGIN_RIGHT 25
   #define PROBING_MARGIN_FRONT 10
   #define PROBING_MARGIN_BACK 20
-
-  #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
-    #define PROBING_MARGIN_BACK  PROBING_MARGIN
-  #else  
-    #define PROBING_MARGIN_BACK  PROBING_MARGIN
-  #endif
-#endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
