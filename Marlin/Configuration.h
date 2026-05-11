@@ -1164,10 +1164,10 @@
   
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_FEEDRATE (80*60)//(80*60)
+#define XY_PROBE_FEEDRATE (200*60)//(200*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_FEEDRATE_FAST (2*60)
+#define Z_PROBE_FEEDRATE_FAST (4*60)
 // #define Z_PROBE_FEEDRATE_FAST (4*60)
 
 // Feedrate (mm/min) for the "accurate" probe of each point
@@ -1209,7 +1209,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING   4
+#define MULTIPLE_PROBING   2
 #define EXTRA_PROBING    0
 
 /**
@@ -1583,7 +1583,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 7
+  #define GRID_MAX_POINTS_X 11
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1602,7 +1602,7 @@
     #define ABL_BILINEAR_SUBDIVISION
     #if ENABLED(ABL_BILINEAR_SUBDIVISION)
       // Number of subdivisions between probe points
-      #define BILINEAR_SUBDIVISIONS 2
+      #define BILINEAR_SUBDIVISIONS 1
     #endif
 
   #endif
@@ -1724,7 +1724,7 @@
 #endif
 
 // Homing speeds (mm/min)
-#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (8*60) }
+#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (2*60) }
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
