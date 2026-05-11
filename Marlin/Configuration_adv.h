@@ -1177,7 +1177,7 @@
 // @section lcd
 
 #if EITHER(IS_ULTIPANEL, EXTENSIBLE_UI)
-  #define MANUAL_FEEDRATE { 120*60, 120*60, 12*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
+  #define MANUAL_FEEDRATE { 80*60, 80*60, 8*60, 2*60 } // (mm/min) Feedrates for manual moves along X, Y, Z, E from panel
   #define FINE_MANUAL_MOVE 0.02    // (mm) Smallest manual move (< 0.1mm) applying to Z on most machines
   #if IS_ULTIPANEL
     #define MANUAL_E_MOVES_RELATIVE // Display extruder move distance rather than "position"
@@ -1974,7 +1974,7 @@
   #define PROBING_MARGIN_LEFT  20
   #define PROBING_MARGIN_RIGHT 20
   #define PROBING_MARGIN_FRONT 20
-  #define PROBING_MARGIN_BACK 20
+  #define PROBING_MARGIN_BACK 40
 #endif
 
 // #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
