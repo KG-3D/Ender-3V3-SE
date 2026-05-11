@@ -1360,7 +1360,7 @@
  // #endif
 
 #define X_MIN_POS -11
-#define Y_MIN_POS -27
+#define Y_MIN_POS -17
 
 #define Z_MIN_POS 0
 // #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
