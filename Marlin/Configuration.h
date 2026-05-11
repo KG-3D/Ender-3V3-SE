@@ -1357,7 +1357,7 @@
   // #else 
     #define X_MIN_POS -11    //平台向左移动 
     #define  Y_MIN_POS   -18 //平台向前移动 rock_20220927
-  #endif
+ // #endif
 
 #define X_MIN_POS -11
 #define Y_MIN_POS -27
