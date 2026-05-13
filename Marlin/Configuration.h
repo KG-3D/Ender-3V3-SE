@@ -1209,8 +1209,8 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-#define MULTIPLE_PROBING   4
-#define EXTRA_PROBING    0
+#define MULTIPLE_PROBING   2
+#define EXTRA_PROBING    1
 
 /**
  * Z probes require clearance when deploying, stowing, and moving between
@@ -1362,7 +1362,7 @@
 #define X_MIN_POS -11
 #define Y_MIN_POS -17
 
-#define Z_MIN_POS 0
+#define Z_MIN_POS -0.2
 // #if ENABLED(WUHAN_CHENGE_PLATFORM)  //武汉改结构
   #define X_MAX_POS X_BED_SIZE
 //#else
@@ -1386,7 +1386,7 @@
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
-  #define MIN_SOFTWARE_ENDSTOP_Z
+  //#define MIN_SOFTWARE_ENDSTOP_Z //KG3D mod. (para permitir que o nozzle desça além do 0 medido durante o homing)
 #endif
 
 // Max software endstops constrain movement within maximum coordinate bounds
@@ -1525,8 +1525,8 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-#define RESTORE_LEVELING_AFTER_G28
-//#define ENABLE_LEVELING_AFTER_G28
+//#define RESTORE_LEVELING_AFTER_G28
+#define ENABLE_LEVELING_AFTER_G28
 
 /**
  * Auto-leveling needs preheating
@@ -1562,7 +1562,7 @@
   // split up moves into short segments like a Delta. This follows the
   // contours of the bed more closely than edge-to-edge straight moves.
   #define SEGMENT_LEVELED_MOVES
-  #define LEVELED_SEGMENT_LENGTH 0.5 // (mm) Length of all segments (except the last one)
+  #define LEVELED_SEGMENT_LENGTH 1 // (mm) Length of all segments (except the last one)
 
   /**
    * Enable the G26 Mesh Validation Pattern tool.
