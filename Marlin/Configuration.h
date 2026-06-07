@@ -1526,7 +1526,7 @@
  * leveling immediately after G28.
  */
 //#define RESTORE_LEVELING_AFTER_G28
-#define ENABLE_LEVELING_AFTER_G28
+//#define ENABLE_LEVELING_AFTER_G28 ; KG3D mod.
 
 /**
  * Auto-leveling needs preheating
