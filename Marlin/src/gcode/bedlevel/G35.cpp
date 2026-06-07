@@ -152,9 +152,9 @@ void GcodeSuite::G35() {
     tool_change(old_tool_index, DISABLED(PARKING_EXTRUDER)); // Fetch previous toolhead if not PARKING_EXTRUDER
   #endif
 
-  #if BOTH(HAS_LEVELING, RESTORE_LEVELING_AFTER_G35)
-    set_bed_leveling_enabled(leveling_was_active);
-  #endif
+  //#if BOTH(HAS_LEVELING, RESTORE_LEVELING_AFTER_G35) // KG3D mod.
+    //set_bed_leveling_enabled(leveling_was_active); // KG3D mod.
+  //#endif // KG3D mod.
 
   // Stow the probe, as the last call to probe.probe_at_point(...) left
   // the probe deployed if it was successful.
